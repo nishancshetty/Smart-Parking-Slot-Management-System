@@ -1,0 +1,5 @@
+Vehicle Number,Vehicle Type,Slot ID,Entry Time,Exit Time,Duration,Amount
+KA01AB1234,BIKE,1,10:15:00,12:30:00,2 hrs 15 mins,50.0
+KA02CD5678,CAR,6,09:45:00,13:00:00,3 hrs 15 mins,200.0
+KA03EF9012,SUV,17,08:30:00,11:45:00,3 hrs 15 mins,260.0
+KA04GH3456,EV,21,11:00:00,13:30:00,2 hrs 30 mins,80.0
