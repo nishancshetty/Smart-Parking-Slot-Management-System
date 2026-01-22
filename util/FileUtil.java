@@ -1,5 +1,4 @@
 package com.parking.util;
-
 import com.parking.model.ParkingSlot;
 import com.parking.model.Vehicle;
 import com.parking.enums.VehicleType;

@@ -1,7 +1,5 @@
 package com.parking.model;
-
 import com.parking.enums.SlotType;
-
 public class ParkingSlot {
 
     private int slotId;

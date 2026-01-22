@@ -1,8 +1,6 @@
 package com.parking.util;
-
 import com.parking.enums.VehicleType;
 import java.time.Duration;
-
 public class ChargeCalculator {
 
     // Private constructor to prevent object creation

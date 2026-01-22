@@ -168,7 +168,7 @@ public class ParkingService {
                 slot.getVehicle().getVehicleNumber().equalsIgnoreCase(vehicleNumber)) {
 
                 System.out.println("Vehicle Found!");
-                System.out.println("Slot ID    : " + slot.getSlotId());
+                System.out.println("Slot id    : " + slot.getSlotId());
                 System.out.println("Vehicle Type: " + slot.getVehicle().getVehicleType());
                 System.out.println("Entry Time : " + slot.getVehicle().getEntryTime());
                 return;

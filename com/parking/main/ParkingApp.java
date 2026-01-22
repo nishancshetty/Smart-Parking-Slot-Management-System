@@ -15,7 +15,7 @@ public class ParkingApp {
         int choice;
 
         System.out.println("================================");
-        System.out.println("   SMART PARKING MANAGEMENT");
+        System.out.println("   SMARt PARKING MANAGEMENT");
         System.out.println("================================");
 
         do {

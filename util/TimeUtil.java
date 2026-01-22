@@ -3,8 +3,6 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 public class TimeUtil {
-
-    // Private constructor to prevent object creation
     private TimeUtil() {
     }
 

@@ -1,5 +1,4 @@
 package com.parking.model;
-
 import com.parking.enums.VehicleType;
 import java.time.LocalTime;
 
