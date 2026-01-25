@@ -1,4 +1,5 @@
 package com.parking.model;
+
 import com.parking.enums.VehicleType;
 import java.time.LocalTime;
 
@@ -43,6 +44,7 @@ public class Vehicle {
     @Override
     public String toString() {
         return "Vehicle Number: " + vehicleNumber +
-               ", Type: " + vehicleType +
-               ", Entry Time: " + entryTime;
+                ", Type: " + vehicleType +
+                ", Entry Time: " + entryTime;
     }
+}
