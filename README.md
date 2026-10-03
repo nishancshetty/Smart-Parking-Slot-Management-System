@@ -1,717 +1,121 @@
 # Smart Parking Slot Management System
 
-A console-based **Smart Parking Slot Management System built using Java**.
-
-The project simulates the basic operations of a real-world parking lot. It allows vehicles to enter and exit the parking area, automatically allocates suitable parking slots, calculates parking charges, generates tickets, stores parking information, and maintains transaction records.
-
----
-
-## About the Project
-
-Managing parking manually becomes difficult when there are multiple vehicle types and parking slots.
-
-This project provides a simple software-based solution for managing a parking lot.
-
-The system can:
-
-* Register vehicles entering the parking lot
-* Automatically assign suitable parking slots
-* Track currently parked vehicles
-* Record vehicle entry and exit times
-* Calculate parking charges
-* Generate parking tickets
-* Search vehicles using vehicle numbers
-* Display available and occupied parking slots
-* Save parking information using files
-* Maintain transaction history
-
-The application is implemented using **Java Object-Oriented Programming concepts** and runs through a simple menu-driven console interface.
+A **Java-based console application** that automates parking lot operations by managing vehicle entry, slot allocation, ticket generation, fee calculation, and transaction records.
 
 ---
 
 ## Features
 
-### Vehicle Entry
-
-When a vehicle enters the parking lot, the system records its details and automatically searches for a suitable available parking slot.
-
-Supported vehicle types include:
-
-* Bike
-* Car
-* SUV
-* Electric Vehicle (EV)
+* Automatic parking slot allocation
+* Supports multiple vehicle types (Bike, Car, SUV, EV)
+* Parking ticket generation
+* Parking fee calculation based on duration
+* Vehicle search using registration number
+* Live parking slot status
+* Transaction history
+* File-based data storage
 
 ---
 
-### Automatic Slot Allocation
+## Tech Stack
 
-The parking system automatically allocates a parking slot depending on the vehicle type.
-
-This prevents the user from manually searching for an available parking space.
-
----
-
-### Vehicle Exit
-
-When a vehicle leaves the parking lot:
-
-1. The system finds the parked vehicle.
-2. Calculates the total parking duration.
-3. Calculates the parking charge.
-4. Frees the occupied parking slot.
-5. Stores the completed transaction.
+* Java
+* Object-Oriented Programming (OOP)
+* Java Collections
+* File Handling
+* LocalDateTime
+* Git & GitHub
 
 ---
 
-### Parking Fee Calculation
-
-Parking charges are calculated dynamically based on factors such as:
-
-* Vehicle type
-* Entry time
-* Exit time
-* Total parking duration
-
-This makes the system more realistic compared to using a fixed parking fee.
-
----
-
-### Parking Ticket Generation
-
-When a vehicle is parked, the system generates a parking ticket containing important information related to the parking session.
-
-A ticket can contain details such as:
-
-* Vehicle number
-* Vehicle type
-* Parking slot
-* Entry time
-
----
-
-### Vehicle Search
-
-Users can search for a parked vehicle using its vehicle registration number.
-
-This makes it easier to determine:
-
-* Whether the vehicle is currently parked
-* Which parking slot is occupied by the vehicle
-
----
-
-### Parking Lot Status
-
-The system can display the current condition of the parking lot.
-
-It allows users to check:
-
-* Available parking slots
-* Occupied parking slots
-* Total number of slots
-* Vehicle information
-
----
-
-### File Handling
-
-Parking information is stored using Java file handling.
-
-This allows data to be saved instead of existing only while the application is running.
-
----
-
-### Transaction Logging
-
-Whenever a vehicle exits, its parking transaction is recorded.
-
-This creates a history of completed parking sessions that can be used for future reference.
-
----
-
-# Project Structure
+## Project Structure
 
 ```text
 Group-Project/
 │
 ├── com/
-│   └── parking/
-│       └── Java source files
+│   └── parking/        # Java source files
 │
-├── data/
-│   └── Parking and transaction data files
+├── data/               # Parking & transaction records
 │
 └── README.md
 ```
 
-## Structure Explanation
-
-### `com/parking/`
-
-This is the main source-code directory of the project.
-
-It contains the Java classes responsible for implementing the Smart Parking System.
-
-The classes in this section handle operations such as:
-
-```text
-Vehicle Management
-        │
-        ├── Vehicle information
-        ├── Vehicle types
-        └── Vehicle identification
-
-Parking Management
-        │
-        ├── Parking slot allocation
-        ├── Available slot checking
-        └── Parking status
-
-Ticket Management
-        │
-        ├── Ticket generation
-        ├── Entry information
-        └── Exit information
-
-Fee Management
-        │
-        ├── Parking duration
-        └── Parking charge calculation
-
-File Management
-        │
-        ├── Saving parking data
-        └── Loading stored information
-```
-
 ---
 
-### `data/`
-
-The `data` directory is used for storing information generated by the application.
-
-Examples include:
+## How It Works
 
 ```text
-data/
-│
-├── parking information
-├── vehicle records
-└── transaction records
-```
-
-File handling helps maintain information even after the program is stopped.
-
----
-
-### `README.md`
-
-The README contains documentation about:
-
-* The purpose of the project
-* Features
-* Project structure
-* Technologies used
-* Installation instructions
-* How the parking system works
-
----
-
-# How the System Works
-
-The overall workflow of the application is:
-
-```text
-                 START
-                   │
-                   ▼
-             Display Menu
-                   │
-          ┌────────┴────────┐
-          │                 │
-          ▼                 ▼
-     Park Vehicle      Exit Vehicle
-          │                 │
-          ▼                 ▼
-   Enter Vehicle      Enter Vehicle
-      Details            Number
-          │                 │
-          ▼                 ▼
-   Find Available      Find Vehicle
-        Slot               │
-          │                 ▼
-          ▼          Calculate Parking
-   Allocate Slot          Duration
-          │                 │
-          ▼                 ▼
-   Generate Ticket    Calculate Charge
-          │                 │
-          ▼                 ▼
-      Save Data       Free Parking Slot
-          │                 │
-          └────────┬────────┘
-                   │
-                   ▼
-              Display Menu
-```
-
----
-
-# Parking Process
-
-When a user selects the option to park a vehicle:
-
-```text
-Vehicle Arrives
+Vehicle Enters
       │
       ▼
-Enter Vehicle Details
+Automatic Slot Allocation
       │
       ▼
-Identify Vehicle Type
+Ticket Generated
       │
       ▼
-Find Compatible Slot
+Vehicle Parked
       │
       ▼
-Is Slot Available?
-   │           │
-  Yes          No
-   │           │
-   ▼           ▼
-Assign Slot   Show
-   │        "Parking Full"
-   ▼
-Record Entry Time
-   │
-   ▼
-Generate Ticket
-   │
-   ▼
-Save Information
+Vehicle Exit
+      │
+      ▼
+Fee Calculated
+      │
+      ▼
+Transaction Saved
 ```
 
 ---
 
-# Vehicle Exit Process
-
-When a vehicle exits:
-
-```text
-Enter Vehicle Number
-        │
-        ▼
-Search Vehicle
-        │
-        ▼
-Vehicle Found?
-    │          │
-   Yes         No
-    │          │
-    ▼          ▼
-Get Entry    Display
-   Time     Error Message
-    │
-    ▼
-Record Exit Time
-    │
-    ▼
-Calculate Duration
-    │
-    ▼
-Calculate Parking Fee
-    │
-    ▼
-Free Parking Slot
-    │
-    ▼
-Save Transaction
-```
-
----
-
-# Object-Oriented Programming Concepts Used
-
-The project demonstrates several important Java OOP concepts.
-
-## Classes and Objects
-
-Real-world parking entities are represented using Java classes and objects.
-
-Examples include:
-
-* Vehicles
-* Parking slots
-* Tickets
-* Transactions
-
----
-
-## Encapsulation
-
-Vehicle, parking, and ticket information can be stored inside classes and accessed using methods.
-
-This helps protect the internal state of objects.
-
----
-
-## Inheritance
-
-Common vehicle properties can be shared between different types of vehicles.
-
-For example:
-
-```text
-             Vehicle
-                │
-     ┌──────────┼──────────┐
-     │          │          │
-    Bike       Car        SUV
-```
-
-This reduces repeated code.
-
----
-
-## Polymorphism
-
-Different vehicle types can behave differently while still being treated as vehicles by the parking system.
-
----
-
-## Enums
-
-Enums can be used to represent fixed categories such as vehicle types.
-
-Example:
-
-```java
-BIKE
-CAR
-SUV
-EV
-```
-
-Using enums prevents invalid vehicle types from being entered internally.
-
----
-
-# Technologies Used
-
-| Technology         | Purpose                               |
-| ------------------ | ------------------------------------- |
-| Java               | Main programming language             |
-| Java OOP           | Application design                    |
-| Java Collections   | Managing vehicles and parking slots   |
-| Java File Handling | Saving and loading information        |
-| Java Enums         | Representing fixed vehicle categories |
-| LocalDateTime      | Tracking entry and exit times         |
-| Git                | Version control                       |
-| GitHub             | Source-code hosting                   |
-
----
-
-# Requirements
-
-Before running the project, make sure you have:
-
-* Java JDK installed
-* Git installed
-* A Java IDE or code editor
-
-Recommended IDEs:
-
-* IntelliJ IDEA
-* VS Code
-* Eclipse
-
-You can check whether Java is installed using:
-
-```bash
-java -version
-```
-
-You can check the Java compiler using:
-
-```bash
-javac -version
-```
-
----
-
-# Installation
-
-## 1. Clone the Repository
+## Installation
 
 ```bash
 git clone https://github.com/nishancshetty/Group-Project.git
-```
-
----
-
-## 2. Move into the Project
-
-```bash
 cd Group-Project
 ```
 
----
-
-## 3. Open the Project
-
-Open the project using:
-
-* IntelliJ IDEA
-* Eclipse
-* VS Code
-
-or another Java-compatible IDE.
-
----
-
-# Running the Project
-
-Compile the Java files from the project directory.
-
-For example:
+Compile the project:
 
 ```bash
 javac com/parking/*.java
 ```
 
-Then run the class containing the `main()` method.
+Run the application:
 
 ```bash
 java com.parking.Main
 ```
 
-> The exact command can depend on the name of the class containing the `main()` method.
+> Replace `Main` with the class that contains the `main()` method if required.
 
 ---
 
-# Example Application Menu
-
-The application follows a menu-driven approach similar to:
-
-```text
-====================================
-     SMART PARKING MANAGEMENT
-====================================
-
-1. Park Vehicle
-2. Exit Vehicle
-3. Search Vehicle
-4. View Parking Status
-5. View Transactions
-6. Exit Program
-
-Enter your choice:
-```
-
-The user selects an option and the appropriate parking operation is performed.
-
----
-
-# Example Parking Scenario
-
-Suppose a **Car** with vehicle number:
-
-```text
-KA-19-AB-1234
-```
-
-enters the parking lot.
-
-The system performs the following steps:
-
-```text
-Car Enters
-    ↓
-Vehicle details recorded
-    ↓
-Available CAR slot searched
-    ↓
-Slot allocated
-    ↓
-Entry time recorded
-    ↓
-Parking ticket generated
-```
-
-When the same vehicle exits:
-
-```text
-Vehicle number entered
-    ↓
-Vehicle located
-    ↓
-Exit time recorded
-    ↓
-Parking duration calculated
-    ↓
-Parking charge calculated
-    ↓
-Slot becomes available
-    ↓
-Transaction saved
-```
-
----
-
-# Main Concepts Demonstrated
-
-This project demonstrates practical implementation of:
+## Key Concepts Demonstrated
 
 * Object-Oriented Programming
-* Classes and Objects
 * Encapsulation
 * Inheritance
 * Polymorphism
 * Enums
-* Java Collections
-* Date and Time handling
-* File handling
-* Exception handling
-* Modular programming
-* Menu-driven applications
-* Basic data persistence
+* File Handling
+* Exception Handling
+* Modular Programming
 
 ---
 
-# Advantages of the System
+## Future Improvements
 
-### Automatic Management
-
-The system automatically manages parking slots instead of requiring manual assignment.
-
-### Faster Vehicle Search
-
-Vehicles can be quickly located using their registration number.
-
-### Real-Time Slot Status
-
-Users can check available and occupied parking spaces.
-
-### Automatic Fee Calculation
-
-Parking fees are calculated based on the parking duration.
-
-### Persistent Data
-
-File handling allows important parking information to be stored.
-
-### Extensible Design
-
-New functionality can be added without completely redesigning the project.
+* Database Integration
+* GUI/Desktop Application
+* Web Dashboard
+* QR Code Tickets
+* Online Reservations
+* Digital Payments
 
 ---
 
-# Possible Future Improvements
+## Team
 
-The current console application can be expanded further.
-
-Possible improvements include:
-
-* Graphical User Interface
-* Web-based dashboard
-* Database integration
-* User authentication
-* Admin dashboard
-* Online parking reservations
-* QR-code based tickets
-* Digital payments
-* Number plate recognition
-* Real-time slot sensors
-* Mobile application
-* Email or SMS notifications
-* Parking analytics dashboard
-
----
-
-# Future Architecture
-
-The project could eventually be expanded into:
-
-```text
-                  User
-                   │
-                   ▼
-             Web / Mobile UI
-                   │
-                   ▼
-              Java Backend
-                   │
-        ┌──────────┼───────────┐
-        │          │           │
-        ▼          ▼           ▼
-     Parking     Payment    Analytics
-     Service     Service     Service
-        │
-        ▼
-      Database
-```
-
----
-
-# Learning Outcomes
-
-By developing this project, students can understand how Java programming concepts can be applied to solve a real-world problem.
-
-Important learning outcomes include:
-
-* Designing Java classes
-* Working with objects
-* Creating modular programs
-* Managing collections of objects
-* Working with date and time
-* Reading and writing files
-* Designing menu-driven applications
-* Applying OOP principles
-* Managing a project using Git and GitHub
-
----
-
-# Contributing
-
-Contributions and improvements are welcome.
-
-To contribute:
-
-```bash
-git checkout -b feature-name
-```
-
-Make your changes.
-
-Then:
-
-```bash
-git add .
-git commit -m "Add new feature"
-git push origin feature-name
-```
-
-A pull request can then be created on GitHub.
-
----
-
-# Repository
-
-GitHub Repository:
-
-https://github.com/nishancshetty/Group-Project
-
----
-
-# Authors
-
-Developed as a **Group Project** for learning and implementing Java programming and Object-Oriented Programming concepts.
-
----
-
-## Project Status
-
-**Current Status:** Functional console-based application
-
-The project currently supports the major operations required for basic parking lot management and can be extended with additional features in the future.
+Developed as a **Group Project** to demonstrate practical implementation of Java and Object-Oriented Programming concepts.
